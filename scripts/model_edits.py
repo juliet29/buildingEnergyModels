@@ -34,28 +34,43 @@ def create_zoneventilation_object(name="Default"):
 
 def create_schedule_object():
     return {
-        "schedule_type_limits_name": "Fraction",
-        "Through": "12/31",
-        "For": "AllDays",
-        "Until": "12:00, 1.0",
-        "Until": "24:00, 0.0",   
+      "data": [
+        { "field": "Through: 12/31" },
+        { "field": "For: AllDays" },
+        { "field": "Until: 13:00" },
+        { "field": 1.0 },
+        { "field": "Until: 24:00" },
+        { "field": 0.0 },
+      ],
+      "schedule_type_limits_name": "Fraction"
     }
 
 # ============================================================================ # ! General 
 
 def add_object(obj, model, fx, multiple=False):
     model[obj] = {}
-    model[obj] = fx(name)
     if multiple:
         for ix, name in enumerate(model["Zone"].keys()):
             model[obj][f"{obj} {ix+1}"] = fx(name)
+    else:
+        model[obj] = fx()
     return model 
 
 
-def add_zone_vent(model):
-        model = add_object("ZoneVentilation:WindandStackOpenArea", model, create_zoneventilation_object, multiple=True)
 
-        model = add_object("Schedule:Compact", model, create_schedule_object)
+
+
+def add_zone_vent(model):
+        vent_obj = "ZoneVentilation:WindandStackOpenArea"
+        nv_sched_name = "Nat Vent Sched"
+
+        model = add_object(vent_obj, model, create_zoneventilation_object, multiple=True)
+        
+        model["Schedule:Compact"][nv_sched_name] = create_schedule_object()
+
+        model[vent_obj][f"{vent_obj} 2"]["opening_area_fraction_schedule_name"] = nv_sched_name
+
+
 
 
 
