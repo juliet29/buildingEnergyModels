@@ -5,6 +5,23 @@ from icecream import ic
 ic.configureOutput(includeContext=True)
 
 # ============================================================================ #
+# ! Helpers 
+def create_AFN_surface(name="Default"):
+    return {
+                "surface_name": name,
+                "window_door_opening_factor_or_crack_factor": 1,
+                "leakage_component_name": "SliderWindow"
+            }
+
+def create_AFN_zone(name="Default"):
+    return {
+            "single_sided_wind_pressure_coefficient_algorithm": "Standard",
+            "ventilation_control_mode": "Constant",
+            "zone_name": name
+            }
+
+
+# ============================================================================ #
 # ! Rosse Openstudio Edits on AFN 
 
 def rosse_on_afn(afn_model, rosse_model):
@@ -55,21 +72,19 @@ def add_afn_to_model(afn_model, model):
     zone_ex.pop("facade_width") 
 
     # add modified example to the model, and change zone names to match model 
-    for z in model["Zone"].keys():
-        model["AirflowNetwork:MultiZone:Zone"] = zone_ex
-        model["AirflowNetwork:MultiZone:Zone"]["zone_name"] = z
+    model["AirflowNetwork:MultiZone:Zone"] = {}
+    for ix, name in enumerate(model["Zone"].keys()):
+        model["AirflowNetwork:MultiZone:Zone"][f"AirflowNetwork:MultiZone:Zone {ix+1}"] = create_AFN_zone(name)
 
-    # ~ define opening surfaces and opening details 
+    # ~ define opening details and opening surfaces 
     # add slider window definition to model without modification 
     model["AirflowNetwork:MultiZone:Component:DetailedOpening"] = afn_model["AirflowNetwork:MultiZone:Component:DetailedOpening"]
 
-    # get example of afn surface 
-    surface_ex = afn_model["AirflowNetwork:MultiZone:Surface"]["AirflowNetwork:MultiZone:Surface 1"]
-
-    # add afn surface to model 
-    for f in model["FenestrationSurface:Detailed"].keys():
-        model["AirflowNetwork:MultiZone:Surface"] = surface_ex
-        model["AirflowNetwork:MultiZone:Surface"]["surface_name"] = f
+    # make AFN surfaces for the windows in the buildings 
+    model["AirflowNetwork:MultiZone:Surface"] = {}
+    fen_names = model["FenestrationSurface:Detailed"].keys()
+    for ix, name in enumerate(fen_names):
+        model["AirflowNetwork:MultiZone:Surface"][f"AirflowNetwork:MultiZone:Surface {ix+1}"] = create_AFN_surface(name)
 
 
     # ~ define vent schedules
