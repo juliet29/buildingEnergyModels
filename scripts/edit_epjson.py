@@ -24,17 +24,17 @@ with open(os.path.join(ROOT, MODELS_DIR, filename)) as f:
 
 
 # ! edits to afn-rosse model 
-test02 =  rosse_on_afn(base_afn_model, rosse_model)
+model01 =  rosse_on_afn(base_afn_model, rosse_model)
+model = add_zone_vent(model01)
 
-test02 = add_afn_to_model(base_afn_model, test02)
+# model = add_afn_to_model(base_afn_model, model01)
 
 
 
 
 # # ! output data 
 # write 
-model_name = "test02"
-model = test02
+model_name = "test03_zone_vent"
 
 output_filename = f'{model_name}.epJSON'
 # dont need to make dir, it should go in general models dir, e+ makes the dir for the output os.mkdir(os.path.join(ROOT, MODELS_DIR, f"{model_name}" ))

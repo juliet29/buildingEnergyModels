@@ -1,6 +1,6 @@
 #!/bin/bash
 
-model=test02
+model=test03_zone_vent
 model_dir=230303_rr
 
 python3 scripts/edit_epjson.py 

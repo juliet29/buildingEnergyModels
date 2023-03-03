@@ -20,6 +20,52 @@ def create_AFN_zone(name="Default"):
             "zone_name": name
             }
 
+def create_zoneventilation_object(name="Default"):
+        return {
+            "zone_or_space_name": name,
+            "opening_area": 0.5, #m2
+            # "opening_area_fraction_schedule_name": "Constant",
+            "opening_effectiveness": "Autocalculate",
+            "effective_angle": 0,
+            # "discharge_coefficient_for_opening": "Autocalculate",
+
+            }
+
+
+def create_schedule_object():
+    return {
+        "schedule_type_limits_name": "Fraction",
+        "Through": "12/31",
+        "For": "AllDays",
+        "Until": "12:00, 1.0",
+        "Until": "24:00, 0.0",   
+    }
+
+# ============================================================================ # ! General 
+
+def add_object(obj, model, fx, multiple=False):
+    model[obj] = {}
+    model[obj] = fx(name)
+    if multiple:
+        for ix, name in enumerate(model["Zone"].keys()):
+            model[obj][f"{obj} {ix+1}"] = fx(name)
+    return model 
+
+
+def add_zone_vent(model):
+        model = add_object("ZoneVentilation:WindandStackOpenArea", model, create_zoneventilation_object, multiple=True)
+
+        model = add_object("Schedule:Compact", model, create_schedule_object)
+
+
+
+        # obj = "ZoneVentilation:WindandStackOpenArea"
+        # model[obj] = {}
+        # for ix, name in enumerate(model["Zone"].keys()):
+        #     model[obj][f"{obj} {ix+1}"] = create_zoneventilation_object(name)
+
+        return model
+
 
 # ============================================================================ #
 # ! Rosse Openstudio Edits on AFN 
