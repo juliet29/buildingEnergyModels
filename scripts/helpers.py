@@ -8,8 +8,17 @@ from plotly.subplots import make_subplots
 
 
 
+def diff(list1, list2):
+    # TODO would be good to know which model the dif originates from 
+    c = set(list1).union(set(list2))  # or c = set(list1) | set(list2)
+    d = set(list1).intersection(set(list2))  # or d = set(list1) & set(list2)
+    return list(c - d), c, d
+
+
 class LoadSQL():
     """
+    Class for quickly analyzing outputs of SQL files 
+
     Example usage:
 
     # load sql 

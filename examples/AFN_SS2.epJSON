@@ -17,7 +17,7 @@
             "width_factor_for_opening_factor_1": 0.0,
             "width_factor_for_opening_factor_2": 0.5
         }
-    },
+    }, 
     "AirflowNetwork:MultiZone:ReferenceCrackConditions": {
         "ReferenceCrackConditions": {
             "reference_barometric_pressure": 101320,
