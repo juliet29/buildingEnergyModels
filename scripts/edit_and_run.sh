@@ -1,9 +1,9 @@
 #!/bin/bash
 
-model=test04_schedZoneVent
+model=test05_accWindowSize
 model_dir=230303_rr
 
-python3 scripts/edit_epjson.py 
+# python3 scripts/edit_epjson.py 
 
 echo $model
 echo $model_dir

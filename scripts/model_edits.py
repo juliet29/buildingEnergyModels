@@ -23,7 +23,7 @@ def create_AFN_zone(name="Default"):
 def create_zoneventilation_object(name="Default"):
         return {
             "zone_or_space_name": name,
-            "opening_area": 0.5, #m2
+            "opening_area": 2.25, #m2
             # "opening_area_fraction_schedule_name": "Constant",
             "opening_effectiveness": "Autocalculate",
             "effective_angle": 0,
@@ -71,13 +71,6 @@ def add_zone_vent(model):
         model[vent_obj][f"{vent_obj} 2"]["opening_area_fraction_schedule_name"] = nv_sched_name
 
 
-
-
-
-        # obj = "ZoneVentilation:WindandStackOpenArea"
-        # model[obj] = {}
-        # for ix, name in enumerate(model["Zone"].keys()):
-        #     model[obj][f"{obj} {ix+1}"] = create_zoneventilation_object(name)
 
         return model
 

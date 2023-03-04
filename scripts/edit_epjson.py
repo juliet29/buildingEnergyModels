@@ -34,7 +34,7 @@ model = add_zone_vent(model01)
 
 # # ! output data 
 # write 
-model_name = "test04_schedZoneVent"
+model_name = "test05_accWindowSize"
 
 output_filename = f'{model_name}.epJSON'
 # dont need to make dir, it should go in general models dir, e+ makes the dir for the output os.mkdir(os.path.join(ROOT, MODELS_DIR, f"{model_name}" ))
