@@ -59,16 +59,16 @@ def create_variable_schedule(key):
     item = exp_date[key]
     data = []
     for i, time in enumerate(htimes[item]):
-        d = add_times(time["open"], 0)
+        d = add_times(time["open"], 0.0)
         data.extend(d)
-        d = add_times(time["close"], 1)
+        d = add_times(time["close"], 1.0)
         data.extend(d)
     # add end of the year data, have this be closed 
     eoy = [
         {"field": f"Through: 12/31"},
         {'field': 'For: AllDays'},
         {'field': 'Until: 24:00'},
-        {'field': 0}
+        {'field': 0.0}
     ]
     data.extend(eoy)
 

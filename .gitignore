@@ -20,7 +20,7 @@ epluszsz.csv
 *.sql
 
 **/weather
-**/rosseRoomModel
+# **/rosseRoomModel
 **/figures
 **/archives
 

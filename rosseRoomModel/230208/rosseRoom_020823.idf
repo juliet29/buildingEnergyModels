@@ -1,0 +1,1528 @@
+
+Version,
+  9.4;                                    !- Version Identifier
+
+Timestep,
+  6;                                      !- Number of Timesteps per Hour
+
+LifeCycleCost:Parameters,
+  Life Cycle Cost Parameters,             !- Name
+  EndOfYear,                              !- Discounting Convention
+  ConstantDollar,                         !- Inflation Approach
+  0.03,                                   !- Real Discount Rate
+  ,                                       !- Nominal Discount Rate
+  ,                                       !- Inflation
+  ,                                       !- Base Date Month
+  2011,                                   !- Base Date Year
+  ,                                       !- Service Date Month
+  2011,                                   !- Service Date Year
+  25,                                     !- Length of Study Period in Years
+  ,                                       !- Tax rate
+  None;                                   !- Depreciation Method
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Electricity,       !- Name
+  Electricity,                            !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9838,                                 !- Year Escalation 1
+  0.9730,                                 !- Year Escalation 2
+  0.9632,                                 !- Year Escalation 3
+  0.9611,                                 !- Year Escalation 4
+  0.9571,                                 !- Year Escalation 5
+  0.9553,                                 !- Year Escalation 6
+  0.9539,                                 !- Year Escalation 7
+  0.9521,                                 !- Year Escalation 8
+  0.9546,                                 !- Year Escalation 9
+  0.9550,                                 !- Year Escalation 10
+  0.9553,                                 !- Year Escalation 11
+  0.9564,                                 !- Year Escalation 12
+  0.9575,                                 !- Year Escalation 13
+  0.9596,                                 !- Year Escalation 14
+  0.9618,                                 !- Year Escalation 15
+  0.9614,                                 !- Year Escalation 16
+  0.9618,                                 !- Year Escalation 17
+  0.9618,                                 !- Year Escalation 18
+  0.9593,                                 !- Year Escalation 19
+  0.9589,                                 !- Year Escalation 20
+  0.9607,                                 !- Year Escalation 21
+  0.9625,                                 !- Year Escalation 22
+  0.9650,                                 !- Year Escalation 23
+  0.9708,                                 !- Year Escalation 24
+  0.9751,                                 !- Year Escalation 25
+  0.9762,                                 !- Year Escalation 26
+  0.9766,                                 !- Year Escalation 27
+  0.9766,                                 !- Year Escalation 28
+  0.9769,                                 !- Year Escalation 29
+  0.9773;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Distillate Oil,    !- Name
+  FuelOilNo1,                             !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9714,                                 !- Year Escalation 1
+  0.9730,                                 !- Year Escalation 2
+  0.9942,                                 !- Year Escalation 3
+  1.0164,                                 !- Year Escalation 4
+  1.0541,                                 !- Year Escalation 5
+  1.0928,                                 !- Year Escalation 6
+  1.1267,                                 !- Year Escalation 7
+  1.1580,                                 !- Year Escalation 8
+  1.1792,                                 !- Year Escalation 9
+  1.1967,                                 !- Year Escalation 10
+  1.2200,                                 !- Year Escalation 11
+  1.2333,                                 !- Year Escalation 12
+  1.2566,                                 !- Year Escalation 13
+  1.2709,                                 !- Year Escalation 14
+  1.2826,                                 !- Year Escalation 15
+  1.2985,                                 !- Year Escalation 16
+  1.3102,                                 !- Year Escalation 17
+  1.3250,                                 !- Year Escalation 18
+  1.3261,                                 !- Year Escalation 19
+  1.3282,                                 !- Year Escalation 20
+  1.3324,                                 !- Year Escalation 21
+  1.3356,                                 !- Year Escalation 22
+  1.3431,                                 !- Year Escalation 23
+  1.3510,                                 !- Year Escalation 24
+  1.3568,                                 !- Year Escalation 25
+  1.3606,                                 !- Year Escalation 26
+  1.3637,                                 !- Year Escalation 27
+  1.3674,                                 !- Year Escalation 28
+  1.3706,                                 !- Year Escalation 29
+  1.3743;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Residual Oil,      !- Name
+  FuelOilNo2,                             !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.8469,                                 !- Year Escalation 1
+  0.8257,                                 !- Year Escalation 2
+  0.8681,                                 !- Year Escalation 3
+  0.8988,                                 !- Year Escalation 4
+  0.9289,                                 !- Year Escalation 5
+  0.9604,                                 !- Year Escalation 6
+  0.9897,                                 !- Year Escalation 7
+  1.0075,                                 !- Year Escalation 8
+  1.0314,                                 !- Year Escalation 9
+  1.0554,                                 !- Year Escalation 10
+  1.0861,                                 !- Year Escalation 11
+  1.1278,                                 !- Year Escalation 12
+  1.1497,                                 !- Year Escalation 13
+  1.1620,                                 !- Year Escalation 14
+  1.1743,                                 !- Year Escalation 15
+  1.1852,                                 !- Year Escalation 16
+  1.1948,                                 !- Year Escalation 17
+  1.2037,                                 !- Year Escalation 18
+  1.2071,                                 !- Year Escalation 19
+  1.2119,                                 !- Year Escalation 20
+  1.2139,                                 !- Year Escalation 21
+  1.2194,                                 !- Year Escalation 22
+  1.2276,                                 !- Year Escalation 23
+  1.2365,                                 !- Year Escalation 24
+  1.2420,                                 !- Year Escalation 25
+  1.2461,                                 !- Year Escalation 26
+  1.2509,                                 !- Year Escalation 27
+  1.2550,                                 !- Year Escalation 28
+  1.2591,                                 !- Year Escalation 29
+  1.2638;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Natural gas,       !- Name
+  NaturalGas,                             !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9823,                                 !- Year Escalation 1
+  0.9557,                                 !- Year Escalation 2
+  0.9279,                                 !- Year Escalation 3
+  0.9257,                                 !- Year Escalation 4
+  0.9346,                                 !- Year Escalation 5
+  0.9412,                                 !- Year Escalation 6
+  0.9512,                                 !- Year Escalation 7
+  0.9645,                                 !- Year Escalation 8
+  0.9856,                                 !- Year Escalation 9
+  1.0067,                                 !- Year Escalation 10
+  1.0222,                                 !- Year Escalation 11
+  1.0410,                                 !- Year Escalation 12
+  1.0610,                                 !- Year Escalation 13
+  1.0787,                                 !- Year Escalation 14
+  1.0942,                                 !- Year Escalation 15
+  1.1098,                                 !- Year Escalation 16
+  1.1220,                                 !- Year Escalation 17
+  1.1308,                                 !- Year Escalation 18
+  1.1386,                                 !- Year Escalation 19
+  1.1486,                                 !- Year Escalation 20
+  1.1619,                                 !- Year Escalation 21
+  1.1763,                                 !- Year Escalation 22
+  1.1918,                                 !- Year Escalation 23
+  1.2118,                                 !- Year Escalation 24
+  1.2284,                                 !- Year Escalation 25
+  1.2439,                                 !- Year Escalation 26
+  1.2605,                                 !- Year Escalation 27
+  1.2772,                                 !- Year Escalation 28
+  1.2938,                                 !- Year Escalation 29
+  1.3115;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Coal,              !- Name
+  Coal,                                   !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9970,                                 !- Year Escalation 1
+  1.0089,                                 !- Year Escalation 2
+  1.0089,                                 !- Year Escalation 3
+  0.9941,                                 !- Year Escalation 4
+  0.9941,                                 !- Year Escalation 5
+  1.0000,                                 !- Year Escalation 6
+  1.0030,                                 !- Year Escalation 7
+  1.0059,                                 !- Year Escalation 8
+  1.0089,                                 !- Year Escalation 9
+  1.0119,                                 !- Year Escalation 10
+  1.0148,                                 !- Year Escalation 11
+  1.0178,                                 !- Year Escalation 12
+  1.0208,                                 !- Year Escalation 13
+  1.0267,                                 !- Year Escalation 14
+  1.0297,                                 !- Year Escalation 15
+  1.0356,                                 !- Year Escalation 16
+  1.0415,                                 !- Year Escalation 17
+  1.0534,                                 !- Year Escalation 18
+  1.0564,                                 !- Year Escalation 19
+  1.0593,                                 !- Year Escalation 20
+  1.0653,                                 !- Year Escalation 21
+  1.0712,                                 !- Year Escalation 22
+  1.0742,                                 !- Year Escalation 23
+  1.0801,                                 !- Year Escalation 24
+  1.0831,                                 !- Year Escalation 25
+  1.0831,                                 !- Year Escalation 26
+  1.0861,                                 !- Year Escalation 27
+  1.0890,                                 !- Year Escalation 28
+  1.0920,                                 !- Year Escalation 29
+  1.0950;                                 !- Year Escalation 30
+
+Building,
+  Building 1,                             !- Name
+  ,                                       !- North Axis {deg}
+  ,                                       !- Terrain
+  ,                                       !- Loads Convergence Tolerance Value {W}
+  ,                                       !- Temperature Convergence Tolerance Value {deltaC}
+  ,                                       !- Solar Distribution
+  ,                                       !- Maximum Number of Warmup Days
+  ;                                       !- Minimum Number of Warmup Days
+
+SimulationControl,
+  No,                                     !- Do Zone Sizing Calculation
+  No,                                     !- Do System Sizing Calculation
+  No,                                     !- Do Plant Sizing Calculation
+  Yes,                                    !- Run Simulation for Sizing Periods
+  Yes,                                    !- Run Simulation for Weather File Run Periods
+  ,                                       !- Do HVAC Sizing Simulation for Sizing Periods
+  ;                                       !- Maximum Number of HVAC Sizing Simulation Passes
+
+ConvergenceLimits,
+  1;                                      !- Minimum System Timestep {minutes}
+
+HeatBalanceAlgorithm,
+  ConductionTransferFunction,             !- Algorithm
+  200;                                    !- Surface Temperature Upper Limit {C}
+
+RunPeriod,
+  Run Period 1,                           !- Name
+  1,                                      !- Begin Month
+  1,                                      !- Begin Day of Month
+  2020,                                   !- Begin Year
+  12,                                     !- End Month
+  31,                                     !- End Day of Month
+  2020,                                   !- End Year
+  Thursday,                               !- Day of Week for Start Day
+  No,                                     !- Use Weather File Holidays and Special Days
+  No,                                     !- Use Weather File Daylight Saving Period
+  No,                                     !- Apply Weekend Holiday Rule
+  Yes,                                    !- Use Weather File Rain Indicators
+  Yes;                                    !- Use Weather File Snow Indicators
+
+ShadowCalculation,
+  PolygonClipping,                        !- Shading Calculation Method
+  Periodic,                               !- Shading Calculation Update Frequency Method
+  7,                                      !- Shading Calculation Update Frequency
+  15000,                                  !- Maximum Figures in Shadow Overlap Calculations
+  SutherlandHodgman,                      !- Polygon Clipping Algorithm
+  512,                                    !- Pixel Counting Resolution
+  SimpleSkyDiffuseModeling,               !- Sky Diffuse Modeling Algorithm
+  No,                                     !- Output External Shading Calculation Results
+  No,                                     !- Disable Self-Shading Within Shading Zone Groups
+  No;                                     !- Disable Self-Shading From Shading Zone Groups to Other Zones
+
+SurfaceConvectionAlgorithm:Inside,
+  TARP;                                   !- Algorithm
+
+SurfaceConvectionAlgorithm:Outside,
+  DOE-2;                                  !- Algorithm
+
+Sizing:Parameters,
+  1.25,                                   !- Heating Sizing Factor
+  1.15;                                   !- Cooling Sizing Factor
+
+ZoneAirContaminantBalance,
+  No;                                     !- Carbon Dioxide Concentration
+
+ZoneAirHeatBalanceAlgorithm,
+  AnalyticalSolution;                     !- Algorithm
+
+ZoneCapacitanceMultiplier:ResearchSpecial,
+  Zone Capacitance Multiplier Research Special, !- Name
+  ,                                       !- Zone or ZoneList Name
+  ,                                       !- Temperature Capacity Multiplier
+  ,                                       !- Humidity Capacity Multiplier
+  ,                                       !- Carbon Dioxide Capacity Multiplier
+  ;                                       !- Generic Contaminant Capacity Multiplier
+
+Output:Table:SummaryReports,
+  AllSummary;                             !- Report Name 1
+
+GlobalGeometryRules,
+  UpperLeftCorner,                        !- Starting Vertex Position
+  Counterclockwise,                       !- Vertex Entry Direction
+  Relative,                               !- Coordinate System
+  Relative,                               !- Daylighting Reference Point Coordinate System
+  Relative;                               !- Rectangular Surface Coordinate System
+
+Material,
+  MAT-CC05 4 HW CONCRETE,                 !- Name
+  Rough,                                  !- Roughness
+  0.1016,                                 !- Thickness {m}
+  1.311,                                  !- Conductivity {W/m-K}
+  2240,                                   !- Density {kg/m3}
+  836.800000000001,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.85,                                   !- Solar Absorptance
+  0.85;                                   !- Visible Absorptance
+
+Material:NoMass,
+  CP02 CARPET PAD,                        !- Name
+  Smooth,                                 !- Roughness
+  0.1,                                    !- Thermal Resistance {m2-K/W}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+Construction,
+  ExtSlabCarpet 4in ClimateZone 1-8;      !- Name
+
+ScheduleTypeLimits,
+  ActivityLevel 1,                        !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  activitylevel;                          !- Unit Type
+
+ScheduleTypeLimits,
+  Always On Discrete Limits,              !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  1,                                      !- Upper Limit Value {BasedOnField A3}
+  Discrete,                               !- Numeric Type
+  availability;                           !- Unit Type
+
+ScheduleTypeLimits,
+  Fraction,                               !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  1,                                      !- Upper Limit Value {BasedOnField A3}
+  CONTINUOUS;                             !- Numeric Type
+
+ScheduleTypeLimits,
+  Temperature 18,                         !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature 25,                         !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature 44,                         !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature 60,                         !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature 61,                         !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature 7,                          !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+Schedule:Constant,
+  Always On Discrete,                     !- Name
+  Always On Discrete Limits,              !- Schedule Type Limits Name
+  1;                                      !- Hourly Value
+
+Schedule:Day:Interval,
+  MidriseApartment Activity Default Schedule, !- Name
+  ActivityLevel 1,                        !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  120;                                    !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Activity Summer Design Day, !- Name
+  ActivityLevel 1,                        !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  120;                                    !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Activity Winter Design Day, !- Name
+  ActivityLevel 1,                        !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  120;                                    !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Name
+  Temperature 18,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  23.8999996185303;                       !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Equip Default Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  01:00,                                  !- Time 1 {hh:mm}
+  0.45,                                   !- Value Until Time 1
+  02:00,                                  !- Time 2 {hh:mm}
+  0.41,                                   !- Value Until Time 2
+  03:00,                                  !- Time 3 {hh:mm}
+  0.39,                                   !- Value Until Time 3
+  05:00,                                  !- Time 4 {hh:mm}
+  0.38,                                   !- Value Until Time 4
+  06:00,                                  !- Time 5 {hh:mm}
+  0.43,                                   !- Value Until Time 5
+  07:00,                                  !- Time 6 {hh:mm}
+  0.54,                                   !- Value Until Time 6
+  08:00,                                  !- Time 7 {hh:mm}
+  0.65,                                   !- Value Until Time 7
+  09:00,                                  !- Time 8 {hh:mm}
+  0.66,                                   !- Value Until Time 8
+  10:00,                                  !- Time 9 {hh:mm}
+  0.67,                                   !- Value Until Time 9
+  11:00,                                  !- Time 10 {hh:mm}
+  0.69,                                   !- Value Until Time 10
+  12:00,                                  !- Time 11 {hh:mm}
+  0.7,                                    !- Value Until Time 11
+  13:00,                                  !- Time 12 {hh:mm}
+  0.69,                                   !- Value Until Time 12
+  14:00,                                  !- Time 13 {hh:mm}
+  0.66,                                   !- Value Until Time 13
+  15:00,                                  !- Time 14 {hh:mm}
+  0.65,                                   !- Value Until Time 14
+  16:00,                                  !- Time 15 {hh:mm}
+  0.68,                                   !- Value Until Time 15
+  17:00,                                  !- Time 16 {hh:mm}
+  0.8,                                    !- Value Until Time 16
+  19:00,                                  !- Time 17 {hh:mm}
+  1,                                      !- Value Until Time 17
+  20:00,                                  !- Time 18 {hh:mm}
+  0.93,                                   !- Value Until Time 18
+  21:00,                                  !- Time 19 {hh:mm}
+  0.89,                                   !- Value Until Time 19
+  22:00,                                  !- Time 20 {hh:mm}
+  0.85,                                   !- Value Until Time 20
+  23:00,                                  !- Time 21 {hh:mm}
+  0.71,                                   !- Value Until Time 21
+  24:00,                                  !- Time 22 {hh:mm}
+  0.58;                                   !- Value Until Time 22
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Equip Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  01:00,                                  !- Time 1 {hh:mm}
+  0.45,                                   !- Value Until Time 1
+  02:00,                                  !- Time 2 {hh:mm}
+  0.41,                                   !- Value Until Time 2
+  03:00,                                  !- Time 3 {hh:mm}
+  0.39,                                   !- Value Until Time 3
+  05:00,                                  !- Time 4 {hh:mm}
+  0.38,                                   !- Value Until Time 4
+  06:00,                                  !- Time 5 {hh:mm}
+  0.43,                                   !- Value Until Time 5
+  07:00,                                  !- Time 6 {hh:mm}
+  0.54,                                   !- Value Until Time 6
+  08:00,                                  !- Time 7 {hh:mm}
+  0.65,                                   !- Value Until Time 7
+  09:00,                                  !- Time 8 {hh:mm}
+  0.66,                                   !- Value Until Time 8
+  10:00,                                  !- Time 9 {hh:mm}
+  0.67,                                   !- Value Until Time 9
+  11:00,                                  !- Time 10 {hh:mm}
+  0.69,                                   !- Value Until Time 10
+  12:00,                                  !- Time 11 {hh:mm}
+  0.7,                                    !- Value Until Time 11
+  13:00,                                  !- Time 12 {hh:mm}
+  0.69,                                   !- Value Until Time 12
+  14:00,                                  !- Time 13 {hh:mm}
+  0.66,                                   !- Value Until Time 13
+  15:00,                                  !- Time 14 {hh:mm}
+  0.65,                                   !- Value Until Time 14
+  16:00,                                  !- Time 15 {hh:mm}
+  0.68,                                   !- Value Until Time 15
+  17:00,                                  !- Time 16 {hh:mm}
+  0.8,                                    !- Value Until Time 16
+  19:00,                                  !- Time 17 {hh:mm}
+  1,                                      !- Value Until Time 17
+  20:00,                                  !- Time 18 {hh:mm}
+  0.93,                                   !- Value Until Time 18
+  21:00,                                  !- Time 19 {hh:mm}
+  0.89,                                   !- Value Until Time 19
+  22:00,                                  !- Time 20 {hh:mm}
+  0.85,                                   !- Value Until Time 20
+  23:00,                                  !- Time 21 {hh:mm}
+  0.71,                                   !- Value Until Time 21
+  24:00,                                  !- Time 22 {hh:mm}
+  0.58;                                   !- Value Until Time 22
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Equip Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  01:00,                                  !- Time 1 {hh:mm}
+  0.45,                                   !- Value Until Time 1
+  02:00,                                  !- Time 2 {hh:mm}
+  0.41,                                   !- Value Until Time 2
+  03:00,                                  !- Time 3 {hh:mm}
+  0.39,                                   !- Value Until Time 3
+  05:00,                                  !- Time 4 {hh:mm}
+  0.38,                                   !- Value Until Time 4
+  06:00,                                  !- Time 5 {hh:mm}
+  0.43,                                   !- Value Until Time 5
+  07:00,                                  !- Time 6 {hh:mm}
+  0.54,                                   !- Value Until Time 6
+  08:00,                                  !- Time 7 {hh:mm}
+  0.65,                                   !- Value Until Time 7
+  09:00,                                  !- Time 8 {hh:mm}
+  0.66,                                   !- Value Until Time 8
+  10:00,                                  !- Time 9 {hh:mm}
+  0.67,                                   !- Value Until Time 9
+  11:00,                                  !- Time 10 {hh:mm}
+  0.69,                                   !- Value Until Time 10
+  12:00,                                  !- Time 11 {hh:mm}
+  0.7,                                    !- Value Until Time 11
+  13:00,                                  !- Time 12 {hh:mm}
+  0.69,                                   !- Value Until Time 12
+  14:00,                                  !- Time 13 {hh:mm}
+  0.66,                                   !- Value Until Time 13
+  15:00,                                  !- Time 14 {hh:mm}
+  0.65,                                   !- Value Until Time 14
+  16:00,                                  !- Time 15 {hh:mm}
+  0.68,                                   !- Value Until Time 15
+  17:00,                                  !- Time 16 {hh:mm}
+  0.8,                                    !- Value Until Time 16
+  19:00,                                  !- Time 17 {hh:mm}
+  1,                                      !- Value Until Time 17
+  20:00,                                  !- Time 18 {hh:mm}
+  0.93,                                   !- Value Until Time 18
+  21:00,                                  !- Time 19 {hh:mm}
+  0.89,                                   !- Value Until Time 19
+  22:00,                                  !- Time 20 {hh:mm}
+  0.85,                                   !- Value Until Time 20
+  23:00,                                  !- Time 21 {hh:mm}
+  0.71,                                   !- Value Until Time 21
+  24:00,                                  !- Time 22 {hh:mm}
+  0.58;                                   !- Value Until Time 22
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Name
+  Temperature 25,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  21.1000003814697;                       !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Light Default Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  04:00,                                  !- Time 1 {hh:mm}
+  0.067,                                  !- Value Until Time 1
+  05:00,                                  !- Time 2 {hh:mm}
+  0.187,                                  !- Value Until Time 2
+  06:00,                                  !- Time 3 {hh:mm}
+  0.394,                                  !- Value Until Time 3
+  07:00,                                  !- Time 4 {hh:mm}
+  0.44,                                   !- Value Until Time 4
+  08:00,                                  !- Time 5 {hh:mm}
+  0.393,                                  !- Value Until Time 5
+  09:00,                                  !- Time 6 {hh:mm}
+  0.172,                                  !- Value Until Time 6
+  15:00,                                  !- Time 7 {hh:mm}
+  0.119,                                  !- Value Until Time 7
+  16:00,                                  !- Time 8 {hh:mm}
+  0.206,                                  !- Value Until Time 8
+  17:00,                                  !- Time 9 {hh:mm}
+  0.439,                                  !- Value Until Time 9
+  18:00,                                  !- Time 10 {hh:mm}
+  0.616,                                  !- Value Until Time 10
+  19:00,                                  !- Time 11 {hh:mm}
+  0.829,                                  !- Value Until Time 11
+  20:00,                                  !- Time 12 {hh:mm}
+  0.986,                                  !- Value Until Time 12
+  21:00,                                  !- Time 13 {hh:mm}
+  1,                                      !- Value Until Time 13
+  22:00,                                  !- Time 14 {hh:mm}
+  0.692,                                  !- Value Until Time 14
+  23:00,                                  !- Time 15 {hh:mm}
+  0.384,                                  !- Value Until Time 15
+  24:00,                                  !- Time 16 {hh:mm}
+  0.16;                                   !- Value Until Time 16
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Light Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  04:00,                                  !- Time 1 {hh:mm}
+  0.067,                                  !- Value Until Time 1
+  05:00,                                  !- Time 2 {hh:mm}
+  0.187,                                  !- Value Until Time 2
+  06:00,                                  !- Time 3 {hh:mm}
+  0.394,                                  !- Value Until Time 3
+  07:00,                                  !- Time 4 {hh:mm}
+  0.44,                                   !- Value Until Time 4
+  08:00,                                  !- Time 5 {hh:mm}
+  0.393,                                  !- Value Until Time 5
+  09:00,                                  !- Time 6 {hh:mm}
+  0.172,                                  !- Value Until Time 6
+  15:00,                                  !- Time 7 {hh:mm}
+  0.119,                                  !- Value Until Time 7
+  16:00,                                  !- Time 8 {hh:mm}
+  0.206,                                  !- Value Until Time 8
+  17:00,                                  !- Time 9 {hh:mm}
+  0.439,                                  !- Value Until Time 9
+  18:00,                                  !- Time 10 {hh:mm}
+  0.616,                                  !- Value Until Time 10
+  19:00,                                  !- Time 11 {hh:mm}
+  0.829,                                  !- Value Until Time 11
+  20:00,                                  !- Time 12 {hh:mm}
+  0.986,                                  !- Value Until Time 12
+  21:00,                                  !- Time 13 {hh:mm}
+  1,                                      !- Value Until Time 13
+  22:00,                                  !- Time 14 {hh:mm}
+  0.692,                                  !- Value Until Time 14
+  23:00,                                  !- Time 15 {hh:mm}
+  0.384,                                  !- Value Until Time 15
+  24:00,                                  !- Time 16 {hh:mm}
+  0.16;                                   !- Value Until Time 16
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Light Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  04:00,                                  !- Time 1 {hh:mm}
+  0.067,                                  !- Value Until Time 1
+  05:00,                                  !- Time 2 {hh:mm}
+  0.187,                                  !- Value Until Time 2
+  06:00,                                  !- Time 3 {hh:mm}
+  0.394,                                  !- Value Until Time 3
+  07:00,                                  !- Time 4 {hh:mm}
+  0.44,                                   !- Value Until Time 4
+  08:00,                                  !- Time 5 {hh:mm}
+  0.393,                                  !- Value Until Time 5
+  09:00,                                  !- Time 6 {hh:mm}
+  0.172,                                  !- Value Until Time 6
+  15:00,                                  !- Time 7 {hh:mm}
+  0.119,                                  !- Value Until Time 7
+  16:00,                                  !- Time 8 {hh:mm}
+  0.206,                                  !- Value Until Time 8
+  17:00,                                  !- Time 9 {hh:mm}
+  0.439,                                  !- Value Until Time 9
+  18:00,                                  !- Time 10 {hh:mm}
+  0.616,                                  !- Value Until Time 10
+  19:00,                                  !- Time 11 {hh:mm}
+  0.829,                                  !- Value Until Time 11
+  20:00,                                  !- Time 12 {hh:mm}
+  0.986,                                  !- Value Until Time 12
+  21:00,                                  !- Time 13 {hh:mm}
+  1,                                      !- Value Until Time 13
+  22:00,                                  !- Time 14 {hh:mm}
+  0.692,                                  !- Value Until Time 14
+  23:00,                                  !- Time 15 {hh:mm}
+  0.384,                                  !- Value Until Time 15
+  24:00,                                  !- Time 16 {hh:mm}
+  0.16;                                   !- Value Until Time 16
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Occ Default Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  1,                                      !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  0.85,                                   !- Value Until Time 2
+  09:00,                                  !- Time 3 {hh:mm}
+  0.39,                                   !- Value Until Time 3
+  16:00,                                  !- Time 4 {hh:mm}
+  0.25,                                   !- Value Until Time 4
+  17:00,                                  !- Time 5 {hh:mm}
+  0.3,                                    !- Value Until Time 5
+  18:00,                                  !- Time 6 {hh:mm}
+  0.52,                                   !- Value Until Time 6
+  21:00,                                  !- Time 7 {hh:mm}
+  0.87,                                   !- Value Until Time 7
+  24:00,                                  !- Time 8 {hh:mm}
+  1;                                      !- Value Until Time 8
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Occ Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  1,                                      !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  0.85,                                   !- Value Until Time 2
+  09:00,                                  !- Time 3 {hh:mm}
+  0.39,                                   !- Value Until Time 3
+  16:00,                                  !- Time 4 {hh:mm}
+  0.25,                                   !- Value Until Time 4
+  17:00,                                  !- Time 5 {hh:mm}
+  0.3,                                    !- Value Until Time 5
+  18:00,                                  !- Time 6 {hh:mm}
+  0.52,                                   !- Value Until Time 6
+  21:00,                                  !- Time 7 {hh:mm}
+  0.87,                                   !- Value Until Time 7
+  24:00,                                  !- Time 8 {hh:mm}
+  1;                                      !- Value Until Time 8
+
+Schedule:Day:Interval,
+  MidriseApartment Apartment Occ Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  1,                                      !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  0.85,                                   !- Value Until Time 2
+  09:00,                                  !- Time 3 {hh:mm}
+  0.39,                                   !- Value Until Time 3
+  16:00,                                  !- Time 4 {hh:mm}
+  0.25,                                   !- Value Until Time 4
+  17:00,                                  !- Time 5 {hh:mm}
+  0.3,                                    !- Value Until Time 5
+  18:00,                                  !- Time 6 {hh:mm}
+  0.52,                                   !- Value Until Time 6
+  21:00,                                  !- Time 7 {hh:mm}
+  0.87,                                   !- Value Until Time 7
+  24:00,                                  !- Time 8 {hh:mm}
+  1;                                      !- Value Until Time 8
+
+Schedule:Day:Interval,
+  MidriseApartment Corridor Light Default Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  1;                                      !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Corridor Light Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  1;                                      !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Corridor Light Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  1;                                      !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Infil Default Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  1;                                      !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Infil Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  1;                                      !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Infil Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  1;                                      !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Office ClgSetp Default Schedule, !- Name
+  Temperature 7,                          !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  29.3999996185303,                       !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  26.6999988555908,                       !- Value Until Time 2
+  17:00,                                  !- Time 3 {hh:mm}
+  23.8999996185303,                       !- Value Until Time 3
+  18:00,                                  !- Time 4 {hh:mm}
+  26.6999988555908,                       !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  29.3999996185303;                       !- Value Until Time 5
+
+Schedule:Day:Interval,
+  MidriseApartment Office ClgSetp Summer Design Day, !- Name
+  Temperature 7,                          !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  29.4,                                   !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  26.7,                                   !- Value Until Time 2
+  17:00,                                  !- Time 3 {hh:mm}
+  23.9,                                   !- Value Until Time 3
+  18:00,                                  !- Time 4 {hh:mm}
+  26.7,                                   !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  29.4;                                   !- Value Until Time 5
+
+Schedule:Day:Interval,
+  MidriseApartment Office ClgSetp Winter Design Day, !- Name
+  Temperature 7,                          !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  29.4;                                   !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Office Equip Default Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  0.33,                                   !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  0.5,                                    !- Value Until Time 2
+  12:00,                                  !- Time 3 {hh:mm}
+  1,                                      !- Value Until Time 3
+  13:00,                                  !- Time 4 {hh:mm}
+  0.94,                                   !- Value Until Time 4
+  17:00,                                  !- Time 5 {hh:mm}
+  1,                                      !- Value Until Time 5
+  18:00,                                  !- Time 6 {hh:mm}
+  0.5,                                    !- Value Until Time 6
+  24:00,                                  !- Time 7 {hh:mm}
+  0.33;                                   !- Value Until Time 7
+
+Schedule:Day:Interval,
+  MidriseApartment Office Equip Rule 1 Day Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  0.33;                                   !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Office Equip Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  0.33,                                   !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  0.5,                                    !- Value Until Time 2
+  12:00,                                  !- Time 3 {hh:mm}
+  1,                                      !- Value Until Time 3
+  13:00,                                  !- Time 4 {hh:mm}
+  0.94,                                   !- Value Until Time 4
+  17:00,                                  !- Time 5 {hh:mm}
+  1,                                      !- Value Until Time 5
+  18:00,                                  !- Time 6 {hh:mm}
+  0.5,                                    !- Value Until Time 6
+  24:00,                                  !- Time 7 {hh:mm}
+  0.33;                                   !- Value Until Time 7
+
+Schedule:Day:Interval,
+  MidriseApartment Office Equip Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  0.33;                                   !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Office HtgSetp Default Schedule, !- Name
+  Temperature 44,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  15.600001335144,                        !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  18.2999992370605,                       !- Value Until Time 2
+  17:00,                                  !- Time 3 {hh:mm}
+  21.1000003814697,                       !- Value Until Time 3
+  18:00,                                  !- Time 4 {hh:mm}
+  18.3000011444092,                       !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  15.6000003814697;                       !- Value Until Time 5
+
+Schedule:Day:Interval,
+  MidriseApartment Office HtgSetp Summer Design Day, !- Name
+  Temperature 44,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  15.6;                                   !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Office HtgSetp Winter Design Day, !- Name
+  Temperature 44,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  07:00,                                  !- Time 1 {hh:mm}
+  15.6,                                   !- Value Until Time 1
+  08:00,                                  !- Time 2 {hh:mm}
+  18.3,                                   !- Value Until Time 2
+  17:00,                                  !- Time 3 {hh:mm}
+  21.1,                                   !- Value Until Time 3
+  18:00,                                  !- Time 4 {hh:mm}
+  18.3,                                   !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  15.6;                                   !- Value Until Time 5
+
+Schedule:Day:Interval,
+  MidriseApartment Office Light Default Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  08:00,                                  !- Time 1 {hh:mm}
+  0.18,                                   !- Value Until Time 1
+  12:00,                                  !- Time 2 {hh:mm}
+  0.9,                                    !- Value Until Time 2
+  13:00,                                  !- Time 3 {hh:mm}
+  0.8,                                    !- Value Until Time 3
+  17:00,                                  !- Time 4 {hh:mm}
+  0.9,                                    !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  0.18;                                   !- Value Until Time 5
+
+Schedule:Day:Interval,
+  MidriseApartment Office Light Rule 1 Day Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  0.18;                                   !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Office Light Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  08:00,                                  !- Time 1 {hh:mm}
+  0.18,                                   !- Value Until Time 1
+  12:00,                                  !- Time 2 {hh:mm}
+  0.9,                                    !- Value Until Time 2
+  13:00,                                  !- Time 3 {hh:mm}
+  0.8,                                    !- Value Until Time 3
+  17:00,                                  !- Time 4 {hh:mm}
+  0.9,                                    !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  0.18;                                   !- Value Until Time 5
+
+Schedule:Day:Interval,
+  MidriseApartment Office Light Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  0.18;                                   !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Office Occ Default Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  08:00,                                  !- Time 1 {hh:mm}
+  0,                                      !- Value Until Time 1
+  12:00,                                  !- Time 2 {hh:mm}
+  1,                                      !- Value Until Time 2
+  13:00,                                  !- Time 3 {hh:mm}
+  0.5,                                    !- Value Until Time 3
+  17:00,                                  !- Time 4 {hh:mm}
+  1,                                      !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  0;                                      !- Value Until Time 5
+
+Schedule:Day:Interval,
+  MidriseApartment Office Occ Rule 1 Day Schedule, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  0;                                      !- Value Until Time 1
+
+Schedule:Day:Interval,
+  MidriseApartment Office Occ Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  08:00,                                  !- Time 1 {hh:mm}
+  0,                                      !- Value Until Time 1
+  12:00,                                  !- Time 2 {hh:mm}
+  1,                                      !- Value Until Time 2
+  13:00,                                  !- Time 3 {hh:mm}
+  0.5,                                    !- Value Until Time 3
+  17:00,                                  !- Time 4 {hh:mm}
+  1,                                      !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  0;                                      !- Value Until Time 5
+
+Schedule:Day:Interval,
+  MidriseApartment Office Occ Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  08:00,                                  !- Time 1 {hh:mm}
+  0,                                      !- Value Until Time 1
+  12:00,                                  !- Time 2 {hh:mm}
+  1,                                      !- Value Until Time 2
+  13:00,                                  !- Time 3 {hh:mm}
+  0.5,                                    !- Value Until Time 3
+  17:00,                                  !- Time 4 {hh:mm}
+  1,                                      !- Value Until Time 4
+  24:00,                                  !- Time 5 {hh:mm}
+  0;                                      !- Value Until Time 5
+
+Schedule:Day:Interval,
+  Schedule Day 1,                         !- Name
+  Temperature 60,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  15.6000003814697;                       !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 10,                        !- Name
+  Temperature 61,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  40;                                     !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 11,                        !- Name
+  Temperature 61,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  40;                                     !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 2,                         !- Name
+  Temperature 18,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  23.8999996185303;                       !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 3,                         !- Name
+  Temperature 18,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  23.8999996185303;                       !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 4,                         !- Name
+  Temperature 25,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  21.1000003814697;                       !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 5,                         !- Name
+  Temperature 25,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  21.1000003814697;                       !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 6,                         !- Name
+  Temperature 61,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  40;                                     !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 7,                         !- Name
+  Temperature 60,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  15.6000003814697;                       !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Schedule Day 8,                         !- Name
+  Temperature 60,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  15.6000003814697;                       !- Value Until Time 1
+
+Schedule:Week:Daily,
+  MidriseApartment Activity Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Activity Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Activity Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Activity Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Activity Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Activity Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Activity Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Activity Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Activity Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Activity Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Activity Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Activity Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Activity Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Activity,              !- Name
+  ActivityLevel 1,                        !- Schedule Type Limits Name
+  MidriseApartment Activity Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Apartment ClgSetp Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- Holiday Schedule:Day Name
+  Schedule Day 3,                         !- SummerDesignDay Schedule:Day Name
+  Schedule Day 2,                         !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Apartment ClgSetp Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Apartment ClgSetp,     !- Name
+  Temperature 18,                         !- Schedule Type Limits Name
+  MidriseApartment Apartment ClgSetp Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Apartment Equip Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Apartment Equip Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Apartment Equip Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Apartment Equip Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Apartment Equip Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Apartment Equip,       !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  MidriseApartment Apartment Equip Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Apartment HtgSetp Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- Holiday Schedule:Day Name
+  Schedule Day 5,                         !- SummerDesignDay Schedule:Day Name
+  Schedule Day 4,                         !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Apartment HtgSetp Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Apartment HtgSetp,     !- Name
+  Temperature 25,                         !- Schedule Type Limits Name
+  MidriseApartment Apartment HtgSetp Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Apartment Light Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Apartment Light Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Apartment Light Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Apartment Light Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Apartment Light Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Apartment Light,       !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  MidriseApartment Apartment Light Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Apartment Occ Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Apartment Occ Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Apartment Occ Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Apartment Occ Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Apartment Occ Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Apartment Occ,         !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  MidriseApartment Apartment Occ Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Corridor ClgSetp Week Rule - Jan1-Dec31, !- Name
+  Schedule Day 6,                         !- Sunday Schedule:Day Name
+  Schedule Day 6,                         !- Monday Schedule:Day Name
+  Schedule Day 6,                         !- Tuesday Schedule:Day Name
+  Schedule Day 6,                         !- Wednesday Schedule:Day Name
+  Schedule Day 6,                         !- Thursday Schedule:Day Name
+  Schedule Day 6,                         !- Friday Schedule:Day Name
+  Schedule Day 6,                         !- Saturday Schedule:Day Name
+  Schedule Day 6,                         !- Holiday Schedule:Day Name
+  Schedule Day 11,                        !- SummerDesignDay Schedule:Day Name
+  Schedule Day 10,                        !- WinterDesignDay Schedule:Day Name
+  Schedule Day 6,                         !- CustomDay1 Schedule:Day Name
+  Schedule Day 6;                         !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Corridor ClgSetp,      !- Name
+  Temperature 61,                         !- Schedule Type Limits Name
+  MidriseApartment Corridor ClgSetp Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Corridor HtgSetp Week Rule - Jan1-Dec31, !- Name
+  Schedule Day 1,                         !- Sunday Schedule:Day Name
+  Schedule Day 1,                         !- Monday Schedule:Day Name
+  Schedule Day 1,                         !- Tuesday Schedule:Day Name
+  Schedule Day 1,                         !- Wednesday Schedule:Day Name
+  Schedule Day 1,                         !- Thursday Schedule:Day Name
+  Schedule Day 1,                         !- Friday Schedule:Day Name
+  Schedule Day 1,                         !- Saturday Schedule:Day Name
+  Schedule Day 1,                         !- Holiday Schedule:Day Name
+  Schedule Day 8,                         !- SummerDesignDay Schedule:Day Name
+  Schedule Day 7,                         !- WinterDesignDay Schedule:Day Name
+  Schedule Day 1,                         !- CustomDay1 Schedule:Day Name
+  Schedule Day 1;                         !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Corridor HtgSetp,      !- Name
+  Temperature 60,                         !- Schedule Type Limits Name
+  MidriseApartment Corridor HtgSetp Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Corridor Light Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Corridor Light Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Corridor Light Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Corridor Light Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Corridor Light Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Corridor Light,        !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  MidriseApartment Corridor Light Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Infil Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Infil Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Infil Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Infil Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Infil Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Infil Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Infil Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Infil Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Infil Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Infil Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Infil Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Infil Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Infil Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Infil,                 !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  MidriseApartment Infil Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Office ClgSetp Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Office ClgSetp Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Office ClgSetp Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Office ClgSetp Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Office ClgSetp Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Office ClgSetp,        !- Name
+  Temperature 7,                          !- Schedule Type Limits Name
+  MidriseApartment Office ClgSetp Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Office Equip Week Rule - Jan1-Jan3, !- Name
+  MidriseApartment Office Equip Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Office Equip Rule 1 Day Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Office Equip Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Office Equip Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily,
+  MidriseApartment Office Equip Week Rule - Jan4-Dec31, !- Name
+  MidriseApartment Office Equip Rule 1 Day Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Office Equip Rule 1 Day Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Office Equip Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Office Equip Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Office Equip Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Office Equip,          !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  MidriseApartment Office Equip Week Rule - Jan1-Jan3, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  1,                                      !- End Month 1
+  3,                                      !- End Day 1
+  MidriseApartment Office Equip Week Rule - Jan4-Dec31, !- Schedule:Week Name 2
+  1,                                      !- Start Month 2
+  4,                                      !- Start Day 2
+  12,                                     !- End Month 2
+  31;                                     !- End Day 2
+
+Schedule:Week:Daily,
+  MidriseApartment Office HtgSetp Week Rule - Jan1-Dec31, !- Name
+  MidriseApartment Office HtgSetp Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Office HtgSetp Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Office HtgSetp Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Office HtgSetp Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Office HtgSetp,        !- Name
+  Temperature 44,                         !- Schedule Type Limits Name
+  MidriseApartment Office HtgSetp Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  MidriseApartment Office Light Week Rule - Jan1-Jan3, !- Name
+  MidriseApartment Office Light Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Office Light Rule 1 Day Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Office Light Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Office Light Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Office Light Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily,
+  MidriseApartment Office Light Week Rule - Jan4-Dec31, !- Name
+  MidriseApartment Office Light Rule 1 Day Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Office Light Rule 1 Day Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Office Light Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Office Light Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Office Light Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Office Light Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Office Light,          !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  MidriseApartment Office Light Week Rule - Jan1-Jan3, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  1,                                      !- End Month 1
+  3,                                      !- End Day 1
+  MidriseApartment Office Light Week Rule - Jan4-Dec31, !- Schedule:Week Name 2
+  1,                                      !- Start Month 2
+  4,                                      !- Start Day 2
+  12,                                     !- End Month 2
+  31;                                     !- End Day 2
+
+Schedule:Week:Daily,
+  MidriseApartment Office Occ Week Rule - Jan1-Jan3, !- Name
+  MidriseApartment Office Occ Default Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Office Occ Rule 1 Day Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Office Occ Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Office Occ Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Week:Daily,
+  MidriseApartment Office Occ Week Rule - Jan4-Dec31, !- Name
+  MidriseApartment Office Occ Rule 1 Day Schedule, !- Sunday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Monday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Tuesday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Wednesday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Thursday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Friday Schedule:Day Name
+  MidriseApartment Office Occ Rule 1 Day Schedule, !- Saturday Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- Holiday Schedule:Day Name
+  MidriseApartment Office Occ Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  MidriseApartment Office Occ Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule, !- CustomDay1 Schedule:Day Name
+  MidriseApartment Office Occ Default Schedule; !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  MidriseApartment Office Occ,            !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  MidriseApartment Office Occ Week Rule - Jan1-Jan3, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  1,                                      !- End Month 1
+  3,                                      !- End Day 1
+  MidriseApartment Office Occ Week Rule - Jan4-Dec31, !- Schedule:Week Name 2
+  1,                                      !- Start Month 2
+  4,                                      !- Start Day 2
+  12,                                     !- End Month 2
+  31;                                     !- End Day 2
+
+Schedule:Constant,
+  Always Off Discrete,                    !- Name
+  ,                                       !- Schedule Type Limits Name
+  0;                                      !- Hourly Value
+
+Schedule:Constant,
+  Always On Continuous,                   !- Name
+  ,                                       !- Schedule Type Limits Name
+  1;                                      !- Hourly Value
+
+OutdoorAir:Node,
+  Model Outdoor Air Node;                 !- Name
+
+OutputControl:ReportingTolerances,
+  0.2,                                    !- Tolerance for Time Heating Setpoint Not Met {deltaC}
+  0.2;                                    !- Tolerance for Time Cooling Setpoint Not Met {deltaC}
+
+Site:Location,
+  Site 1,                                 !- Name
+  0,                                      !- Latitude {deg}
+  0,                                      !- Longitude {deg}
+  0,                                      !- Time Zone {hr}
+  0;                                      !- Elevation {m}
+
+OutputControl:Table:Style,
+  HTML;                                   !- Column Separator
+
+Output:VariableDictionary,
+  IDF,                                    !- Key Field
+  Unsorted;                               !- Sort Option
+
+Output:SQLite,
+  SimpleAndTabular;                       !- Option Type
+
+LifeCycleCost:NonrecurringCost,
+  Default Cost,                           !- Name
+  Construction,                           !- Category
+  0,                                      !- Cost
+  ServicePeriod;                          !- Start of Costs
+

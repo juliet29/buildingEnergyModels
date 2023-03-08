@@ -1,0 +1,45 @@
+EnergyPlus Starting
+EnergyPlus, Version 9.4.0-998c4b761e, YMD=2023.02.13 15:35
+Could not find platform independent libraries <prefix>
+Could not find platform dependent libraries <exec_prefix>
+Consider setting $PYTHONHOME to <prefix>[:<exec_prefix>]
+Adjusting Air System Sizing
+Adjusting Standard 62.1 Ventilation Sizing
+Initializing Simulation
+Reporting Surfaces
+Beginning Primary Simulation
+Initializing New Environment Parameters
+Warming up {1}
+Warming up {2}
+Warming up {3}
+Starting Simulation at 07/01/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=07/08/2020
+Continuing Simulation at 07/08/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=07/15/2020
+Continuing Simulation at 07/15/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=07/22/2020
+Continuing Simulation at 07/22/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=07/29/2020
+Continuing Simulation at 07/29/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=08/05/2020
+Continuing Simulation at 08/05/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=08/12/2020
+Continuing Simulation at 08/12/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=08/19/2020
+Continuing Simulation at 08/19/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=08/26/2020
+Continuing Simulation at 08/26/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=09/02/2020
+Continuing Simulation at 09/02/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=09/09/2020
+Continuing Simulation at 09/09/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=09/16/2020
+Continuing Simulation at 09/16/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=09/23/2020
+Continuing Simulation at 09/23/2020 for RUN PERIOD 1
+Updating Shadowing Calculations, Start Date=09/30/2020
+Writing tabular output file results using HTML format.
+Computing Life Cycle Costs and Reporting
+Writing final SQL reports
+EnergyPlus Run Time=00hr 00min  1.11sec
+EnergyPlus Completed Successfully.

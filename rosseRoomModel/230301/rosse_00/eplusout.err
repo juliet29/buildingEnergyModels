@@ -1,0 +1,7 @@
+Program Version,EnergyPlus, Version 22.2.0-c249759bad, YMD=2023.03.01 15:02,
+   ** Severe  ** [json.exception.invalid_iterator.207] cannot use key() for non-object iterators
+   ************* Warning:  Node connection errors not checked - most system input has not been read (see previous warning).
+   ************* Fatal error -- final processing.  Program exited before simulations began.  See previous error messages.
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Terminated--Fatal Error Detected. 0 Warning; 1 Severe Errors; Elapsed Time=00hr 00min  0.09sec

@@ -103,9 +103,13 @@ def rosse_on_afn(afn_model, rosse_model):
 def add_afn_to_model(afn_model, model):
     # ~ add vent availability schedules
     closed_sched = "always_closed"
-    dynamic_sched = "A" # for july data, west room 
     model["Schedule:Compact"][closed_sched] = create_schedule_object(closed_sched)
-    model["Schedule:Compact"][dynamic_sched] = create_schedule_object(dynamic_sched)
+    model["Schedule:File"] = {}
+    model["Schedule:File"]["Window Operation"] = {
+        "file_name": "/Users/julietnwagwuume-ezeoke/_UILCode/buildingEnergyModel/scripts/constants/annual_wo_sched.csv",
+        "column_number": 2,
+        "rows_to_skip_at_top": 1
+    }
 
     # ~ define simulation control 
     # print(model.keys())
@@ -137,10 +141,13 @@ def add_afn_to_model(afn_model, model):
     for ix, name in enumerate(fen_names):
         model["AirflowNetwork:MultiZone:Surface"][f"AirflowNetwork:MultiZone:Surface {ix+1}"] = create_AFN_surface(name)
 
-    for surface in model["AirflowNetwork:MultiZone:Surface"]:
-        if "WestZone_Window" in surface.surface_name:
-            surface["venting_availability_schedule_name"] = dynamic_sched
+    # for surface in model["AirflowNetwork:MultiZone:Surface"].values():
+    #     if "WestZone_Window" in surface["surface_name"]:
+    #         surface["venting_availability_schedule_name"] = "Window Operation"
 
+
+    # adjust timestep...
+    model["Timestep"]["Timestep 1"]["number_of_timesteps_per_hour"] = 60
 
     
     # TODO -> way to print summary of changes, and add to IDF?

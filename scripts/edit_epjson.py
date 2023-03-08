@@ -6,7 +6,7 @@ ic.configureOutput(includeContext=True)
 ROOT= "/Users/julietnwagwuume-ezeoke/_UILCode/buildingEnergyModel/"
 AFN_DIR = "rosseRoomModel/230301/"
 BASE_DIR = "rosseRoomModel/230306/"
-OUTPUT_DIR = "rosseRoomModel/230306/"
+
 
 # ! import data 
 filename = "AFN_SS2.epJSON"
@@ -37,7 +37,8 @@ model = add_afn_to_model(base_afn_model, model01)
 
 # # ! output data 
 # write 
-model_name = "test03"
+OUTPUT_DIR = "rosseRoomModel/230307/"
+model_name = "test00"
 
 output_filename = f'{model_name}.epJSON'
 # dont need to make dir, it should go in general models dir, e+ makes the dir for the output os.mkdir(os.path.join(ROOT, MODELS_DIR, f"{model_name}" ))
