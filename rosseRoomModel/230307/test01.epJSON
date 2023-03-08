@@ -1903,7 +1903,7 @@
       "single_sided_wind_pressure_coefficient_algorithm": "Standard",
       "ventilation_control_mode": "Constant",
       "zone_name": "WestZone",
-      "venting_availability_schedule_name": "always_closed"
+      "venting_availability_schedule_name": "Window Operation"
     }
   },
   "AirflowNetwork:MultiZone:Component:DetailedOpening": {
@@ -1954,8 +1954,7 @@
     "AirflowNetwork:MultiZone:Surface 6": {
       "surface_name": "WestZone_Window",
       "window_door_opening_factor_or_crack_factor": 1,
-      "leakage_component_name": "SliderWindow",
-      "venting_availability_schedule_name": "Window Operation"
+      "leakage_component_name": "SliderWindow"
     }
   }
 }

@@ -50,15 +50,7 @@ AirflowNetwork:MultiZone:Surface,
   WestZone_Window,
   SliderWindow,
   ,
-  1,
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
-  Window Operation;
+  1;
 
 AirflowNetwork:MultiZone:Zone,
   EastZone,
@@ -93,7 +85,7 @@ AirflowNetwork:MultiZone:Zone,
   ,
   ,
   ,
-  always_closed,
+  Window Operation,
   Standard;
 
 AirflowNetwork:SimulationControl,

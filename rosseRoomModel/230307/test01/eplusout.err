@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 22.2.0-c249759bad, YMD=2023.03.07 21:28,
+Program Version,EnergyPlus, Version 22.2.0-c249759bad, YMD=2023.03.07 21:50,
    ** Warning ** For Schedule:File="WINDOW OPERATION", Blank schedule_type_limits_name input -- will not be validated.
    ** Warning ** CheckUsedConstructions: There are 20 nominally unused constructions in input.
    **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
@@ -22,9 +22,7 @@ Program Version,EnergyPlus, Version 22.2.0-c249759bad, YMD=2023.03.07 21:28,
    ************* Key=North_Zone_North_Wall_Right_Window, VarName=AFN LINKAGE NODE 2 TO NODE 1 MASS FLOW RATE, Frequency=TimeStep
    ************* Key=North_Zone_North_Wall_Left_Window, VarName=AFN LINKAGE NODE 1 TO NODE 2 MASS FLOW RATE, Frequency=TimeStep
    ************* Key=North_Zone_North_Wall_Left_Window, VarName=AFN LINKAGE NODE 2 TO NODE 1 MASS FLOW RATE, Frequency=TimeStep
-   ************* There are 15 unused schedules in input.
-   ************* There are 365 unused week schedules in input.
-   ************* There are 365 unused day schedules in input.
+   ************* There are 14 unused schedules in input.
    ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
    *************
    ************* ===== Final Error Summary =====
@@ -36,4 +34,4 @@ Program Version,EnergyPlus, Version 22.2.0-c249759bad, YMD=2023.03.07 21:28,
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 3 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  9.99sec
+   ************* EnergyPlus Completed Successfully-- 3 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  8.66sec

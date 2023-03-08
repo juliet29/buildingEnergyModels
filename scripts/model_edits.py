@@ -142,9 +142,12 @@ def add_afn_to_model(afn_model, model):
         model["AirflowNetwork:MultiZone:Surface"][f"AirflowNetwork:MultiZone:Surface {ix+1}"] = create_AFN_surface(name)
 
     # Turn on for experiment A TODO make a fx where this changes 
-    for surface in model["AirflowNetwork:MultiZone:Surface"].values():
-        if "WestZone_Window" in surface["surface_name"]:
-            surface["venting_availability_schedule_name"] = "Window Operation"
+    # for surface in model["AirflowNetwork:MultiZone:Surface"].values():
+    #     if "WestZone_Window" in surface["surface_name"]:
+    #         surface["venting_availability_schedule_name"] = "Window Operation"
+    for zone in model["AirflowNetwork:MultiZone:Zone"].values():
+        if "WestZone" in zone["zone_name"]:
+            zone["venting_availability_schedule_name"] = "Window Operation"
 
 
  
