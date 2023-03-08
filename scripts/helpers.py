@@ -14,6 +14,9 @@ def diff(list1, list2):
     d = set(list1).intersection(set(list2))  # or d = set(list1) & set(list2)
     return list(c - d), c, d
 
+def flatten(l):
+    return [item for sublist in l for item in sublist]
+
 
 class LoadSQL():
     """
