@@ -63,12 +63,20 @@ def create_variable_schedule(key):
         data.extend(d)
         d = add_times(time["close"], 1)
         data.extend(d)
+    # add end of the year data, have this be closed 
+    eoy = [
+        {"field": f"Through: 12/31"},
+        {'field': 'For: AllDays'},
+        {'field': 'Until: 24:00'},
+        {'field': 0}
+    ]
+    data.extend(eoy)
 
     return data
 
 def create_schedule_object(key, dynamic_key=None): 
     schedules = {
-        "always_closed_sched": {
+        "always_closed": {
             "data": [
                 { "field": "Through: 12/31" },
                 { "field": "For: AllDays" },
@@ -77,7 +85,7 @@ def create_schedule_object(key, dynamic_key=None):
             ],
             "schedule_type_limits_name": "Fraction"
         },
-        "always_open_sched": {
+        "always_open": {
             "data": [
                 { "field": "Through: 12/31" },
                 { "field": "For: AllDays" },
