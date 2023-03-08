@@ -4,17 +4,18 @@ from icecream import ic
 ic.configureOutput(includeContext=True)
 
 ROOT= "/Users/julietnwagwuume-ezeoke/_UILCode/buildingEnergyModel/"
-MODELS_DIR = "rosseRoomModel/230301_rr/"
-OUTPUT_DIR = "rosseRoomModel/230303_rr/"
+AFN_DIR = "rosseRoomModel/230301/"
+BASE_DIR = "rosseRoomModel/230306/"
+OUTPUT_DIR = "rosseRoomModel/230306/"
 
 # ! import data 
 filename = "AFN_SS2.epJSON"
-with open(os.path.join(ROOT, MODELS_DIR, filename)) as f:
+with open(os.path.join(ROOT, AFN_DIR, filename)) as f:
     base_afn_model = json.load(f)
 
 
-filename = "os.epJSON" # os  => open studio model 
-with open(os.path.join(ROOT, MODELS_DIR, filename)) as f:
+filename = "rosse02.epJSON" # os  => open studio model 
+with open(os.path.join(ROOT, BASE_DIR, filename)) as f:
     rosse_model = json.load(f)
 
 
@@ -24,17 +25,19 @@ with open(os.path.join(ROOT, MODELS_DIR, filename)) as f:
 
 
 # ! edits to afn-rosse model 
-model01 =  rosse_on_afn(base_afn_model, rosse_model)
-model = add_zone_vent(model01)
+# no afn 
+# model =  rosse_on_afn(base_afn_model, rosse_model)
 
-# model = add_afn_to_model(base_afn_model, model01)
+# add afn 
+model01 =  rosse_on_afn(base_afn_model, rosse_model)
+model = add_afn_to_model(base_afn_model, model01)
 
 
 
 
 # # ! output data 
 # write 
-model_name = "test05_accWindowSize"
+model_name = "test03"
 
 output_filename = f'{model_name}.epJSON'
 # dont need to make dir, it should go in general models dir, e+ makes the dir for the output os.mkdir(os.path.join(ROOT, MODELS_DIR, f"{model_name}" ))

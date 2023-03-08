@@ -12,12 +12,13 @@ def create_AFN_surface(name="Default"):
                 "window_door_opening_factor_or_crack_factor": 1,
                 "leakage_component_name": "SliderWindow"
             }
+# TODO make doors reference crack => make door leakafe component...
 
 def create_AFN_zone(name="Default"):
     return {
             "single_sided_wind_pressure_coefficient_algorithm": "Standard",
             "ventilation_control_mode": "Constant",
-            "zone_name": name
+            "zone_name": name,
             }
 
 def create_zoneventilation_object(name="Default"):
@@ -38,7 +39,7 @@ def create_schedule_object():
         { "field": "Through: 12/31" },
         { "field": "For: AllDays" },
         { "field": "Until: 13:00" },
-        { "field": 1.0 },
+        { "field": 0.0 },
         { "field": "Until: 24:00" },
         { "field": 0.0 },
       ],
@@ -59,7 +60,6 @@ def add_object(obj, model, fx, multiple=False):
 
 
 
-
 def add_zone_vent(model):
         vent_obj = "ZoneVentilation:WindandStackOpenArea"
         nv_sched_name = "Nat Vent Sched"
@@ -70,9 +70,10 @@ def add_zone_vent(model):
 
         model[vent_obj][f"{vent_obj} 2"]["opening_area_fraction_schedule_name"] = nv_sched_name
 
-
-
         return model
+
+# def add_matching_door(model):
+#     return
 
 
 # ============================================================================ #
@@ -113,6 +114,10 @@ def rosse_on_afn(afn_model, rosse_model):
 
 
 def add_afn_to_model(afn_model, model):
+    # ~ add vent availability schedules
+    closed_sched = "Always Closed Schedule" 
+    model["Schedule:Compact"][closed_sched] = create_schedule_object()
+
     # ~ define simulation control 
     # print(model.keys())
     model["AirflowNetwork:SimulationControl"] = afn_model["AirflowNetwork:SimulationControl"]
@@ -129,6 +134,9 @@ def add_afn_to_model(afn_model, model):
     model["AirflowNetwork:MultiZone:Zone"] = {}
     for ix, name in enumerate(model["Zone"].keys()):
         model["AirflowNetwork:MultiZone:Zone"][f"AirflowNetwork:MultiZone:Zone {ix+1}"] = create_AFN_zone(name)
+        # add a schedule to all zones 
+        model["AirflowNetwork:MultiZone:Zone"][f"AirflowNetwork:MultiZone:Zone {ix+1}"]["venting_availability_schedule_name"] = closed_sched
+    
 
     # ~ define opening details and opening surfaces 
     # add slider window definition to model without modification 
