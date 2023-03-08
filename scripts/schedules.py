@@ -108,3 +108,32 @@ def create_schedule_object(key, dynamic_key=None):
 
 
 
+def make_run_period(ix):
+        filename = "/Users/julietnwagwuume-ezeoke/_UILCode/windows/analysis/constants/window_treatment.json"
+        with open(filename) as f:
+            htimes = json.load(f)
+        for v in htimes.values():
+            v["cutoff_times"]["start"] = pd.to_datetime(v["cutoff_times"]["start"], format= '%Y, %m, %d, %H, %M' )
+            v["cutoff_times"]["end"] = pd.to_datetime(v["cutoff_times"]["end"], format= '%Y, %m, %d, %H, %M' )
+
+        htime = list(htimes.values())[ix]["cutoff_times"]
+        b_month = htime["start"].month
+        b_day = htime["start"].day
+        e_month = htime["end"].month
+        e_day = htime["end"].day
+        
+        rp = {
+        "apply_weekend_holiday_rule": "No",
+        "begin_day_of_month": b_day,
+        "begin_month": b_month,
+        "begin_year": 2017,
+        "end_day_of_month": e_day,
+        "end_month": e_month,
+        "end_year": 2017,
+        "use_weather_file_daylight_saving_period": "Yes",
+        "use_weather_file_holidays_and_special_days": "Yes",
+        "use_weather_file_rain_indicators": "Yes",
+        "use_weather_file_snow_indicators": "Yes"
+        }
+        
+        return rp

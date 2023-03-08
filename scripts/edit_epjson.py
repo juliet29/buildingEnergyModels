@@ -30,7 +30,8 @@ with open(os.path.join(ROOT, BASE_DIR, filename)) as f:
 
 # add afn 
 model01 =  rosse_on_afn(base_afn_model, rosse_model)
-model = add_afn_to_model(base_afn_model, model01)
+model02 = add_afn_to_model(base_afn_model, model01)
+model = adjust_run_control(model02)
 
 
 

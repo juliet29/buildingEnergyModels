@@ -1238,11 +1238,41 @@ OutputControl:Table:Style,
 
 RunPeriod,
   RunPeriod1,
-  1,
-  1,
+  7,
+  20,
   2017,
-  12,
-  31,
+  7,
+  24,
+  2017,
+  ,
+  Yes,
+  Yes,
+  No,
+  Yes,
+  Yes;
+
+RunPeriod,
+  RunPeriod2,
+  7,
+  27,
+  2017,
+  8,
+  10,
+  2017,
+  ,
+  Yes,
+  Yes,
+  No,
+  Yes,
+  Yes;
+
+RunPeriod,
+  RunPeriod3,
+  9,
+  8,
+  2017,
+  9,
+  11,
   2017,
   ,
   Yes,
@@ -1696,7 +1726,7 @@ SimulationControl,
   No,
   No,
   Yes,
-  No,
+  Yes,
   No,
   1;
 
@@ -1778,7 +1808,7 @@ SizingPeriod:DesignDay,
   0.0;
 
 Timestep,
-  60;
+  4;
 
 Version,
   22.2;

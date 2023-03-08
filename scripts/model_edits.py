@@ -146,8 +146,7 @@ def add_afn_to_model(afn_model, model):
     #         surface["venting_availability_schedule_name"] = "Window Operation"
 
 
-    # adjust timestep...
-    model["Timestep"]["Timestep 1"]["number_of_timesteps_per_hour"] = 60
+ 
 
     
     # TODO -> way to print summary of changes, and add to IDF?
@@ -155,16 +154,40 @@ def add_afn_to_model(afn_model, model):
     return model 
 
 
+def adjust_run_control(model):
+    model["RunPeriod"]["RunPeriod1"] = make_run_period(0)
+
+    model["RunPeriod"]["RunPeriod2"]  = {}
+    model["RunPeriod"]["RunPeriod2"] = make_run_period(1)
+
+    model["RunPeriod"]["RunPeriod3"] = {}
+    model["RunPeriod"]["RunPeriod3"] = make_run_period(2)
+
+    model["SimulationControl"]["SimulationControl 1"]["run_simulation_for_weather_file_run_periods"] = "Yes"
+
+    model["SimulationControl"]["SimulationControl 1"]["run_simulation_for_sizing_periods"] = "Yes"
+
+    return model
+
+
 
 # ============================================================================ #
 # ! AFN to Rosse 
 
-def afn_run_control_on_rosse(afn_model, rosse_model):
-    rosse_model["SimulationControl"] = afn_model["SimulationControl"]
-    rosse_model["SizingPeriod:DesignDay"] = afn_model["SizingPeriod:DesignDay"]
+def afn_run_control_on_rosse(model):
+    model["RunPeriod"]["RunPeriod1"]["begin_day_of_month"] = ""
+    model["RunPeriod"]["RunPeriod1"]["begin_month"] = ""
+    model["RunPeriod"]["RunPeriod1"]["end_day_of_month"] = ""
+    model["RunPeriod"]["RunPeriod1"]["end_month"] = ""
 
-    # in afn_model model, the simulation control turns the run period off 
-    rosse_model["RunPeriod"] = afn_model["RunPeriod"]
+
+    model["RunPeriod"]["RunPeriod2"] = {}
+
+    # rosse_model["SimulationControl"] = afn_model["SimulationControl"]
+    # rosse_model["SizingPeriod:DesignDay"] = afn_model["SizingPeriod:DesignDay"]
+
+    # # in afn_model model, the simulation control turns the run period off 
+    # rosse_model["RunPeriod"] = afn_model["RunPeriod"]
 
 
-    return rosse_model
+    return model
