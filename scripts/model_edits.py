@@ -141,9 +141,10 @@ def add_afn_to_model(afn_model, model):
     for ix, name in enumerate(fen_names):
         model["AirflowNetwork:MultiZone:Surface"][f"AirflowNetwork:MultiZone:Surface {ix+1}"] = create_AFN_surface(name)
 
-    # for surface in model["AirflowNetwork:MultiZone:Surface"].values():
-    #     if "WestZone_Window" in surface["surface_name"]:
-    #         surface["venting_availability_schedule_name"] = "Window Operation"
+    # Turn on for experiment A TODO make a fx where this changes 
+    for surface in model["AirflowNetwork:MultiZone:Surface"].values():
+        if "WestZone_Window" in surface["surface_name"]:
+            surface["venting_availability_schedule_name"] = "Window Operation"
 
 
  
@@ -165,29 +166,32 @@ def adjust_run_control(model):
 
     model["SimulationControl"]["SimulationControl 1"]["run_simulation_for_weather_file_run_periods"] = "Yes"
 
-    model["SimulationControl"]["SimulationControl 1"]["run_simulation_for_sizing_periods"] = "Yes"
+    model["SimulationControl"]["SimulationControl 1"]["run_simulation_for_sizing_periods"] = "No"
+
+    model["Timestep"]["Timestep 1"]["number_of_timesteps_per_hour"] = 60
 
     return model
 
+def add_output_vars(model):
+    ix = len(model["Output:Variable"].keys())
+    counter = 1
+    model["Output:Variable"][f"Output:Variable {ix+counter}"] = {
+            "key_value": "*",
+            "reporting_frequency": "Timestep",
+            "variable_name": "AFN Surface Venting Availability Status"
+    }
+    counter+=1
+    model["Output:Variable"][f"Output:Variable {ix+counter}"] = {
+            "key_value": "*",
+            "reporting_frequency": "Timestep",
+            "variable_name": "AFN Zone Ventilation Mass"
+    }
+    counter+=1
+    model["Output:Variable"][f"Output:Variable {ix+counter}"] = {
+            "key_value": "*",
+            "reporting_frequency": "Timestep",
+            "variable_name": "AFN Surface Venting Window or Door Opening Factor"
+    }
 
+    return model 
 
-# ============================================================================ #
-# ! AFN to Rosse 
-
-def afn_run_control_on_rosse(model):
-    model["RunPeriod"]["RunPeriod1"]["begin_day_of_month"] = ""
-    model["RunPeriod"]["RunPeriod1"]["begin_month"] = ""
-    model["RunPeriod"]["RunPeriod1"]["end_day_of_month"] = ""
-    model["RunPeriod"]["RunPeriod1"]["end_month"] = ""
-
-
-    model["RunPeriod"]["RunPeriod2"] = {}
-
-    # rosse_model["SimulationControl"] = afn_model["SimulationControl"]
-    # rosse_model["SizingPeriod:DesignDay"] = afn_model["SizingPeriod:DesignDay"]
-
-    # # in afn_model model, the simulation control turns the run period off 
-    # rosse_model["RunPeriod"] = afn_model["RunPeriod"]
-
-
-    return model

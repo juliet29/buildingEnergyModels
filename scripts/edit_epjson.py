@@ -31,7 +31,8 @@ with open(os.path.join(ROOT, BASE_DIR, filename)) as f:
 # add afn 
 model01 =  rosse_on_afn(base_afn_model, rosse_model)
 model02 = add_afn_to_model(base_afn_model, model01)
-model = adjust_run_control(model02)
+model03 = adjust_run_control(model02)
+model = add_output_vars(model03)
 
 
 
@@ -39,7 +40,7 @@ model = adjust_run_control(model02)
 # # ! output data 
 # write 
 OUTPUT_DIR = "rosseRoomModel/230307/"
-model_name = "test00"
+model_name = "test01"
 
 output_filename = f'{model_name}.epJSON'
 # dont need to make dir, it should go in general models dir, e+ makes the dir for the output os.mkdir(os.path.join(ROOT, MODELS_DIR, f"{model_name}" ))

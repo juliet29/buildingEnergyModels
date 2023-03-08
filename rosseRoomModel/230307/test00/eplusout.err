@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 22.2.0-c249759bad, YMD=2023.03.07 20:47,
+Program Version,EnergyPlus, Version 22.2.0-c249759bad, YMD=2023.03.07 21:04,
    ** Warning ** For Schedule:File="WINDOW OPERATION", Blank schedule_type_limits_name input -- will not be validated.
    ** Warning ** CheckUsedConstructions: There are 20 nominally unused constructions in input.
    **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
@@ -36,4 +36,4 @@ Program Version,EnergyPlus, Version 22.2.0-c249759bad, YMD=2023.03.07 20:47,
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 3 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.21sec
+   ************* EnergyPlus Completed Successfully-- 3 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.04sec

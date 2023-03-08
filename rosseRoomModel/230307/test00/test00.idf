@@ -1230,6 +1230,21 @@ Output:Variable,
   AFN Linkage Node 2 to Node 1 Mass Flow Rate,
   Timestep;
 
+Output:Variable,
+  *,
+  AFN Surface Venting Availability Status,
+  Timestep;
+
+Output:Variable,
+  *,
+  AFN Zone Ventilation Mass,
+  Timestep;
+
+Output:Variable,
+  *,
+  AFN Surface Venting Window or Door Opening Factor,
+  Timestep;
+
 Output:VariableDictionary,
   IDF;
 
@@ -1725,7 +1740,7 @@ SimulationControl,
   No,
   No,
   No,
-  Yes,
+  No,
   Yes,
   No,
   1;
