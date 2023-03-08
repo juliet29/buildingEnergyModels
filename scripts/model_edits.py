@@ -171,7 +171,7 @@ def adjust_run_control(model):
 
     model["SimulationControl"]["SimulationControl 1"]["run_simulation_for_sizing_periods"] = "No"
 
-    model["Timestep"]["Timestep 1"]["number_of_timesteps_per_hour"] = 60
+    model["Timestep"]["Timestep 1"]["number_of_timesteps_per_hour"] = 4
 
     return model
 

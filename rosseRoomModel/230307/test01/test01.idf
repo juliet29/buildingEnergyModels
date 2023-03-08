@@ -1823,7 +1823,7 @@ SizingPeriod:DesignDay,
   0.0;
 
 Timestep,
-  60;
+  4;
 
 Version,
   22.2;
