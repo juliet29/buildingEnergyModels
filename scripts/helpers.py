@@ -17,6 +17,11 @@ def diff(list1, list2):
 def flatten(l):
     return [item for sublist in l for item in sublist]
 
+def normalize(arr):
+    "normalize the values in an array to be between 0 and 1 based on the minimum and maximum values in the array"
+    arr2 =  (arr - arr.min())/(arr.max() - arr.min()) 
+    return arr2
+
 
 class LoadSQL():
     """
